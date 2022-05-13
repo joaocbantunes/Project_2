@@ -1,4 +1,4 @@
-//const discogsWebAPI = require("https://api.discogs.com");
+const axios = require("axios");
 const router = require("express").Router();
 /* 
 router.get("/artist-search", (req, res, next) => {
@@ -23,4 +23,16 @@ router.get("/artist-search", (req, res, next) => {
  */
 
 
-module.exports = router;
+
+axios
+  .get(
+    "https://api.discogs.com/database/search?artistsq=&key=process.env.key&secret=process.env.secret"
+  )
+  .then((response) => {
+    const data = response.results;
+    console.log(data);
+    //res.render("hh", {data})
+  })
+  .catch((err) => next(err));
+
+  module.exports = router;
