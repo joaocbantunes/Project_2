@@ -53,19 +53,29 @@ User model
 
 ```javascript
 {
-  name: String,
+  username: String,
   email: String,
   password: String,
-  favorites: [FavoriteId],
 }
 
 ```
 
-Favorites model
+Artist model
 
 ```javascript
 {
-  placeId: String,
+  name: String,
+}
+
+```
+
+Album model
+
+```javascript
+{
+  title: String,
+  genre: String,
+  year: Number,
 }
 
 ```
@@ -74,15 +84,19 @@ Favorites model
 
 ## API's
 
+DiscoGS API
+
 <br>
 
 ## Packages
+
+NODEMAILER – Share collection / wishlist
 
 <br>
 
 ## Backlog
 
-[See the Trello board.](https://trello.com/b/Ni3giVKf/ironhackproject)
+[See the Trello board.](https://trello.com/b/K1OIaMYF/projecto-2)
 
 <br>
 
@@ -92,9 +106,9 @@ Favorites model
 
 The url to your repository and to your deployed project
 
-[Repository Link]()
+[Repository Link](https://github.com/joaocbantunes/Project_2)
 
-[Deploy Link]()
+[Deploy Link](https://ironhack-discogs.herokuapp.com/)
 
 <br>
 
@@ -102,10 +116,10 @@ The url to your repository and to your deployed project
 
 The url to your presentation slides
 
-[Slides Link](https://docs.google.com/presentation/d/1P5FIi0vHZBUcgUtmt1M4_lLCO5dwdJ4UOgtJa4ehGfk/edit?usp=sharing)
+[Slides Link]()
 
 ### Contributors
 
-FirstName LastName - [`<github-username>`](https://github.com/person1-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+FirstName LastName - [`<github-username>`](https://github.com/joaocbantunes/) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
 
-FirstName LastName - [`<github-username>`](https://github.com/person2-username) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+FirstName LastName - [`<github-username>`](https://github.com/JoaoMorgado8) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
