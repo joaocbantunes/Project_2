@@ -120,6 +120,6 @@ The url to your presentation slides
 
 ### Contributors
 
-FirstName LastName - [`<github-username>`](https://github.com/joaocbantunes/) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
+FirstName LastName - [`<github-joaocbantunes>`](https://github.com/joaocbantunes/) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person1-username)
 
-FirstName LastName - [`<github-username>`](https://github.com/JoaoMorgado8) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
+FirstName LastName - [`<github-JoaoMorgado8>`](https://github.com/JoaoMorgado8) - [`<linkedin-profile-link>`](https://www.linkedin.com/in/person2-username)
