@@ -5,6 +5,13 @@ require("dotenv/config");
 // ℹ️ Connects to the database
 require("./db");
 
+/* const discogsWebAPI = require("https://api.discogs.com");
+
+const discogsAPI = new discogsWebAPI({
+  clientId: process.env.CLIENT_KEY,
+  clientSecret: process.env.CLIENT_SECRET,
+}); */
+
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require("express");
@@ -29,6 +36,9 @@ app.use("/", index);
 
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
+
+const artistRoutes = require("./routes/artist.routes");
+app.use("/", artistRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
