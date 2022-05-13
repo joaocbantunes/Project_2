@@ -28,27 +28,23 @@ Create a profile and add items to a wishlist or collection.
 
 ## Server Routes (Back-end):
 
-| **Method** | **Route**           | **Description**                                              | Request - Body                |
-| ---------- | ------------------- | ------------------------------------------------------------ | ----------------------------- |
-| `GET`      | `/`                 | Main page route. Renders home `index` view.                  |                               |
-| `GET`      | `/login`            | Renders `login` form view.                                   |                               |
-| `POST`     | `/login`            | Sends Login form data to the server.                         | { username, password }        |
-| `GET`      | `/signup`           | Renders `signup` form view.                                  |                               |
-| `POST`     | `/signup`           | Sends Sign Up info to the server and creates user in the DB. | { username, email, password } |
-| `GET`      | `/private/profile`  | Private route. Renders `profile` form view.                  |                               |
-| `GET`      | `/private/wishlist` | Private route. Renders `wishlist` view                       |
-
-| `POST` | `/private/wishlist` | Private route. Add a new album for the current user | { artist, album}
-
-| `GET` | `/private/collection` | Private route. Renders `collection` view |
-
-| `POST` | `/private/collection` | Private route. Add a new album for the current user | { artist, album}
-
-| `GET` | `/private/favorites` | Private route. Render the `favorites` view. | |
-| `POST` | `/private/favorites/` | Private route. Adds a new favorite for the current user. | { name, cuisine, city, } |
-| `DELETE` | `/private/favorites/:restaurantId` | Private route. Deletes the existing favorite from the current user. | |
-| `GET` | `/restaurants` | Renders `restaurant-list` view. | |
-| `GET` | `/restaurants/details/:id` | Renders `restaurant-details` view for the particular restaurant. | |
+| **Method** | **Route**                          | **Description**                                                     | Request - Body                |
+| ---------- | ---------------------------------- | ------------------------------------------------------------------- | ----------------------------- |
+| `GET`      | `/`                                | Main page route. Renders home `index` view.                         |                               |
+| `GET`      | `/login`                           | Renders `login` form view.                                          |                               |
+| `POST`     | `/login`                           | Sends Login form data to the server.                                | { username, password }        |
+| `GET`      | `/signup`                          | Renders `signup` form view.                                         |                               |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB.        | { username, email, password } |
+| `GET`      | `/private/profile`                 | Private route. Renders `profile` form view.                         |                               |
+| `GET`      | `/private/wishlist`                | Private route. Renders `wishlist` view                              |
+| `POST`     | `/private/wishlist`                | Private route. Add a new album for the current user                 | { artist, album}              |
+| `GET`      | `/private/collection`              | Private route. Renders `collection` view                            |
+| `POST`     | `/private/collection`              | Private route. Add a new album for the current user                 | { artist, album}              |
+| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                         |                               |
+| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.            | { name, cuisine, city, }      |
+| `DELETE`   | `/private/favorites/:restaurantId` | Private route. Deletes the existing favorite from the current user. |                               |
+| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                                     |                               |
+| `GET`      | `/restaurants/details/:id`         | Renders `restaurant-details` view for the particular restaurant.    |                               |
 
 ## Models
 
