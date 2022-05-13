@@ -13,6 +13,7 @@ Create a profile and add items to a wishlist or collection.
 - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
 - **homepage** - As a user I want to be able to signup / login and access the profile page.
 - **profile page** - As a user, I will see a search bar and a preview of my wishlist / my collection. I can also access my wishlist / collection.
+- **edit user profile** - As a user, I want to be able to edit my profile informations and add a profile picture.
 - **wishlist / collection** - As a user, I want to be able to access the wishlist / collection and see the album details. I can also delete the album from the wishlist / collection.
 - **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
 - **result of search** - As a user I want to see the list of vinyls filtered by artist name.
@@ -21,8 +22,8 @@ Create a profile and add items to a wishlist or collection.
 
 ### Bonus features
 
-- **edit user profile** - As a user, I want to be able to edit my profile informations and add a profile picture.
 - **share button** - As a user, I want to be able to share my collection / wishlist by e-mail.
+- **responsive** - As a user, I want to be able to use the app on mobile.
 
 <br>
 
@@ -35,12 +36,13 @@ Create a profile and add items to a wishlist or collection.
 | `POST`     | `/login`                       | Sends Login form data to the server.                                 | { username, password }        |
 | `GET`      | `/signup`                      | Renders `signup` form view.                                          |                               |
 | `POST`     | `/signup`                      | Sends Sign Up info to the server and creates user in the DB.         | { username, email, password } |
-| `GET`      | `/private/profile`             | Private route. Renders `profile` form view.                          |                               |
+| `GET`      | `/private/profile`             | Private route. Renders `profile` form view.                          |
+| `PUT`      | `/private/profile-edit`        | Private route. Renders `profile-edit` form view.                     |
 | `GET`      | `/private/wishlist`            | Private route. Renders `wishlist` view.                              |
-| `POST`     | `/private/wishlist`            | Private route. Add a new album for the current user.                 | { artist, album}              |
+| `POST`     | `/private/wishlist/:albumId`   | Private route. Add a new album for the current user.                 | { albumId}                    |
 | `DELETE`   | `/private/wishlist/:albumId`   | Private route. Deletes an existing album from the user's wishlist.   |
 | `GET`      | `/private/collection`          | Private route. Renders `collection` view.                            |
-| `POST`     | `/private/collection`          | Private route. Add a new album for the current user.                 | { artist, album}              |
+| `POST`     | `/private/collection/:albumId` | Private route. Add a new album for the current user.                 | {albumId}                     |
 | `DELETE`   | `/private/collection/:albumId` | Private route. Deletes an existing album from the user's collection. |
 | `GET`      | `/artists`                     | Renders `artist-list` view.                                          |                               |
 | `GET`      | `/albums`                      | Renders `albums-list` view.                                          |
@@ -56,15 +58,12 @@ User model
   username: String,
   email: String,
   password: String,
-}
-
-```
-
-Artist model
-
-```javascript
-{
-  name: String,
+  collection: [{
+    type: Schema.Types.ObjectId, ref: "Album"
+}],
+  wishlist: [{
+  type: Schema.Types.ObjectId, ref: "Album"
+}]
 }
 
 ```
@@ -73,6 +72,7 @@ Album model
 
 ```javascript
 {
+  artist: String,
   title: String,
   genre: String,
   year: Number,
