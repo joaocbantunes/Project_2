@@ -39,10 +39,10 @@ Create a profile and add items to a wishlist or collection.
 | `GET`      | `/private/profile`             | Private route. Renders `profile` form view.                          |
 | `PUT`      | `/private/profile-edit`        | Private route. Renders `profile-edit` form view.                     |
 | `GET`      | `/private/wishlist`            | Private route. Renders `wishlist` view.                              |
-| `POST`     | `/private/wishlist/:albumId`   | Private route. Add a new album for the current user.                 | { artist, album}              |
+| `POST`     | `/private/wishlist/:albumId`   | Private route. Add a new album for the current user.                 | { albumId}                    |
 | `DELETE`   | `/private/wishlist/:albumId`   | Private route. Deletes an existing album from the user's wishlist.   |
 | `GET`      | `/private/collection`          | Private route. Renders `collection` view.                            |
-| `POST`     | `/private/collection/:albumId` | Private route. Add a new album for the current user.                 | { artist, album}              |
+| `POST`     | `/private/collection/:albumId` | Private route. Add a new album for the current user.                 | {albumId}                     |
 | `DELETE`   | `/private/collection/:albumId` | Private route. Deletes an existing album from the user's collection. |
 | `GET`      | `/artists`                     | Renders `artist-list` view.                                          |                               |
 | `GET`      | `/albums`                      | Renders `albums-list` view.                                          |
