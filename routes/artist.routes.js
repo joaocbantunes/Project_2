@@ -15,16 +15,25 @@ router.get("/artist-search", (req, res, next) => {
 }); */
 
 router.get("/artist-search", (req, res, next) => {
-  res.render("artist-search");
+  //console.log(req.query.name);
+  const { name } = req.query;
+  axios
+    .get(
+      `https://api.discogs.com/database/search?q=${name}&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+    )
+    .then((response) => {
+      response.data.results.forEach((element) => {
+        console.log(element.title);
+      });
+      res.render("artist-search", { artistList: response.data.results });
+    })
+    .catch((err) => next(err));
 });
 /* .catch((err) =>
     console.log("The error while searching artists occurred: ", err)
-  );
- */
+  ); */
 
-
-
-axios
+/* axios
   .get(
     "https://api.discogs.com/database/search?artistsq=&key=process.env.key&secret=process.env.secret"
   )
@@ -33,6 +42,6 @@ axios
     console.log(data);
     //res.render("hh", {data})
   })
-  .catch((err) => next(err));
+  .catch((err) => next(err)); */
 
-  module.exports = router;
+module.exports = router;
