@@ -44,4 +44,18 @@ router.get("/artist-search", (req, res, next) => {
   })
   .catch((err) => next(err)); */
 
+router.get("/album", (req, res, next) => {
+  const { name } = req.query;
+  axios
+    .get(
+      `https://api.discogs.com/database/search?q=${name}&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+    )
+    .then((response) => {
+      response.data.results.forEach((element) => {
+        console.log(element.title);
+      });
+      res.render("album");
+    });
+});
+
 module.exports = router;

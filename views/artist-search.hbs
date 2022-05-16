@@ -1,5 +1,9 @@
-<h1> Artist Saerch </h1>
+<h1> Artist Search </h1>
 
 {{#each artistList}}
-  <p>{{this.title}}</p>
+  <div class="artist">
+
+    <img src="{{this.thumb}}" alt="{{this.title}}" />
+    <a href="/album/" class="albumBtn">{{this.title}}</a>
+  </div>
 {{/each}}
