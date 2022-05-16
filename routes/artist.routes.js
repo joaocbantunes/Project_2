@@ -19,7 +19,7 @@ router.get("/artist-search", (req, res, next) => {
   const { name } = req.query;
   axios
     .get(
-      `https://api.discogs.com/database/search?q=${name}&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+      `https://api.discogs.com/database/search?q=${name}&key=${process.env.CLIENT_ID}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
       response.data.results.forEach((element) => {
@@ -48,7 +48,7 @@ router.get("/album/:name", (req, res, next) => {
   const { name } = req.params;
   axios
     .get(
-      `https://api.discogs.com/database/search?artist=${name}&format=vinyl&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+      `https://api.discogs.com/database/search?artist=${name}&format=vinyl&key=${process.env.CLIENT_ID}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
       response.data.results.forEach((element) => {
@@ -59,11 +59,11 @@ router.get("/album/:name", (req, res, next) => {
 });
 
 router.get("/album-details/:id", (req, res, next) => {
-  console.log(req.params);
+  //console.log(req.params);
   const { id } = req.params;
   axios
     .get(
-      `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+      `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_ID}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
       console.log(response.data);
