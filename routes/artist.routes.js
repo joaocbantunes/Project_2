@@ -59,15 +59,15 @@ router.get("/album/:name", (req, res, next) => {
 });
 
 router.get("/album-details/:id", (req, res, next) => {
-  console.log(req.params);
+  //console.log(req.params);
   const { id } = req.params;
   axios
     .get(
       `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
-      console.log(response.data);
-      res.render("album-details", { artistList: response.data });
+      //console.log(response.data);
+      res.render("album-details", { albumDetails: response.data });
     })
     .catch((err) => next(err));
 });
