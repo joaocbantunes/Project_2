@@ -1,9 +1,9 @@
 <h1> Artist Search </h1>
 
 {{#each artistList}}
-  <div class="artist">
+  <div class="album-details">
 
     <img src="{{this.thumb}}" alt="{{this.title}}" />
-    <a href="/album/{{this.title}}" class="albumBtn">{{this.title}}</a>
+    <a href="/album-details/" class="albumBtn">{{this.title}}</a>
   </div>
 {{/each}}

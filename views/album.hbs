@@ -1,1 +1,9 @@
-<h1> TESTE </h1>
+<h1> Artist Albums </h1>
+
+{{#each artistList}}
+  <div class="albums">
+    
+    <img src="{{this.thumb}}" alt="{{this.title}}" />
+    <a href="/album/" class="albumBtn">{{this.title}}</a>
+  </div>
+{{/each}}
