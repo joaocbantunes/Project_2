@@ -23,7 +23,7 @@ router.get("/artist-search", (req, res, next) => {
     )
     .then((response) => {
       response.data.results.forEach((element) => {
-        console.log(element.title);
+        //console.log(element.title);
       });
       res.render("artist-search", { artistList: response.data.results });
     })
@@ -52,24 +52,24 @@ router.get("/album/:name", (req, res, next) => {
     )
     .then((response) => {
       response.data.results.forEach((element) => {
-        console.log(element.title);
+        //console.log(element.title);
       });
       res.render("album", { artistList: response.data.results });
     });
 });
 
-router.get("album-details/:name", (req, res, next) => {
-  const { name } = req.params;
+router.get("/album-details/:id", (req, res, next) => {
+  console.log(req.params);
+  const { id } = req.params;
   axios
     .get(
-      `https://api.discogs.com/database/search?artist=${name}&format=vinyl&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+      `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
-      response.data.results.forEach((element) => {
-        console.log(element.title);
-      });
-      res.render("album-details", { artistList: response.data.results });
-    });
+      console.log(response.data);
+      res.render("album-details", { artistList: response.data });
+    })
+    .catch((err) => next(err));
 });
 
 module.exports = router;

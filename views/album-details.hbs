@@ -1,8 +1,11 @@
-<h1> Artist Search </h1>
+<h1> Album Details </h1>
 
 {{#each artistList}}
   <div class="album-details">
-
+    <p>{{this.title}}</p>
+    <p>{{this.name}}</p>
+    <p>{{this.results}}</p>
+    <p>{{this.year}}</p>
     <img src="{{this.thumb}}" alt="{{this.title}}" />
     <a href="/album-details/" class="albumBtn">{{this.title}}</a>
   </div>

@@ -2,8 +2,8 @@
 
 {{#each artistList}}
   <div class="albums">
-    
+
     <img src="{{this.thumb}}" alt="{{this.title}}" />
-    <a href="/album/" class="albumBtn">{{this.title}}</a>
+    <a href="/album-details/{{this.id}}" class="albumBtn">{{this.title}}</a>
   </div>
 {{/each}}
