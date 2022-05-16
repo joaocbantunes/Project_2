@@ -1,12 +1,16 @@
 <h1> Album Details </h1>
 
-{{#each artistList}}
+<p>{{this.name}}</p>
+
+{{#each albumDetails}}
   <div class="album-details">
-    <p>{{this.title}}</p>
+    <p>{{this.image}}</p>
+    <p>{{albumDetails.name}}</p>
+    <p>{{this.id}}</p>
     <p>{{this.name}}</p>
-    <p>{{this.results}}</p>
+    <p>{{name}}</p>
     <p>{{this.year}}</p>
     <img src="{{this.thumb}}" alt="{{this.title}}" />
-    <a href="/album-details/" class="albumBtn">{{this.title}}</a>
+
   </div>
 {{/each}}
