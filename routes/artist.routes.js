@@ -66,7 +66,7 @@ router.get("/album-details/:id", (req, res, next) => {
       `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
-      //console.log(response.data);
+      console.log(response.data);
       res.render("album-details", { albumDetails: response.data });
     })
     .catch((err) => next(err));

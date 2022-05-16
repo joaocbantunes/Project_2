@@ -1,16 +1,19 @@
 <h1> Album Details </h1>
 
-<p>{{this.name}}</p>
+<div class="album-details">
 
-{{#each albumDetails}}
-  <div class="album-details">
-    <p>{{this.image}}</p>
-    <p>{{albumDetails.name}}</p>
-    <p>{{this.id}}</p>
-    <p>{{this.name}}</p>
-    <p>{{name}}</p>
-    <p>{{this.year}}</p>
-    <img src="{{this.thumb}}" alt="{{this.title}}" />
+  <p>Year: {{albumDetails.year}}</p>
 
-  </div>
-{{/each}}
+  <p>Title: {{albumDetails.title}}</p>
+
+  <p>Genre: <a href="/"> {{albumDetails.genres}}</a></p>
+
+  <p>{{this.image}}</p>
+  <p>{{albumDetails.name}}</p>
+  <p>{{this.id}}</p>
+  <p>{{this.name}}</p>
+  <p>{{name}}</p>
+  <p>{{this.year}}</p>
+  <img src="{{this.thumb}}" alt="{{this.title}}" />
+
+</div>
