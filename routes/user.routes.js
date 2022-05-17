@@ -7,8 +7,7 @@ const Album = require("../models/Album.model");
 //const fileUploader = require("../config/cloudinary.config");
 
 router.get("/user", (req, res, next) => {
-  const user = req.session.user;
-  res.render("profile/user", { user });
+  res.render("profile/user", { user: req.session.user });
 });
 
 router.get("/user/collection", (req, res, next) => {

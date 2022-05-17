@@ -40,18 +40,6 @@ router.post(
     }
 
     //this 'if' bellow was added by Joao Morgado. blame him if it brakes the code
-    if (req.file) {
-      User.create({
-        username,
-        password: password,
-        imageURL: req.file.path,
-      });
-    } else {
-      User.create({
-        username,
-        password: password,
-      });
-    }
 
     //   ! This use case is using a regular expression to control for special characters and min length
     /*
@@ -71,7 +59,7 @@ router.post(
       if (found) {
         return res
           .status(400)
-          .render("auth.signup", { errorMessage: "Username already taken." });
+          .render("auth/signup", { errorMessage: "Username already taken." });
       }
 
       // if user is not found, create a new user - start with hashing the password
@@ -80,10 +68,18 @@ router.post(
         .then((salt) => bcrypt.hash(password, salt))
         .then((hashedPassword) => {
           // Create a user and save it in the database
-          return User.create({
-            username,
-            password: hashedPassword,
-          });
+          if (req.file) {
+            User.create({
+              username,
+              password: hashedPassword,
+              image: req.file.path,
+            });
+          } else {
+            User.create({
+              username,
+              password: hashedPassword,
+            });
+          }
         })
         .then((user) => {
           // Bind the user to the session object
