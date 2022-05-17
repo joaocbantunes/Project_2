@@ -4,6 +4,8 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
+const fileUpload = require("../config/cloudinary.config");
+
 // How many rounds should bcrypt run the salt (default [10 - 12 rounds])
 const saltRounds = 10;
 
@@ -34,6 +36,20 @@ router.post(
     if (password.length < 8) {
       return res.status(400).render("auth/signup", {
         errorMessage: "Your password needs to be at least 8 characters long.",
+      });
+    }
+
+    //this 'if' bellow was added by Joao Morgado. blame him if it brakes the code
+    if (req.file) {
+      User.create({
+        username,
+        password: password,
+        imageURL: req.file.path,
+      });
+    } else {
+      User.create({
+        username,
+        password: password,
       });
     }
 
