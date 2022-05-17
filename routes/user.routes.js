@@ -2,6 +2,8 @@ const axios = require("axios");
 const User = require("../models/User.model");
 const router = require("express").Router();
 
+//app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+
 router.get("/user", (req, res, next) => {
   res.render("profile/user");
 });
