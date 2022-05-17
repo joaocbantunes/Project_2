@@ -16,7 +16,8 @@
 
   <p>Title: {{albumDetails.title}}</p>
 
-  <p>Genre: <a href="/"> {{albumDetails.genres}}</a></p>
+  <p>Genre:
+    <a href="/genre/{{albumDetails.genres}}"> {{albumDetails.genres}}</a></p>
 
   {{#each albumDetails.images}}
 

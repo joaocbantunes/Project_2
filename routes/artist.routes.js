@@ -72,4 +72,18 @@ router.get("/album-details/:id", (req, res, next) => {
     .catch((err) => next(err));
 });
 
+router.get("/genre/:name", (req, res, next) => {
+  const { name } = req.params;
+  axios
+    .get(
+      `https://api.discogs.com/database/search?genre=${name}&key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
+    )
+    .then((response) => {
+      response.data.results.forEach((element) => {
+        //console.log(element.title);
+      });
+      res.render("genre", { artistList: response.data.results });
+    });
+});
+
 module.exports = router;
