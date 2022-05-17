@@ -30,7 +30,6 @@ router.get("/user/wishlist", (req, res, next) => {
   User.findById(user._id)
     .populate("wishlist")
     .then((user) => {
-      console.log(user);
       res.render("profile/wishlist", { user });
     });
 });
@@ -46,17 +45,25 @@ router.post("/user/wishlist/:id", (req, res, next) => {
       Album.create({
         title: album.title,
         image: album.image,
+        artist: album.artist,
       })
         .then((Album) => {
           User.findByIdAndUpdate(req.session.user._id, {
             $push: { wishlist: Album.id },
           }).then(() => {
             console.log(response.data);
-            res.redirect("/profile/wishlist");
+            res.redirect("/user/wishlist");
           });
         })
         .catch((err) => next(err));
     });
+});
+
+router.post("/user/wishlist/:id/delete", (req, res, next) => {
+  const { id } = req.params;
+  User.findByIdAndRemove(id)
+    .then(() => res.redirect("/user/wishlist"))
+    .catch(() => next(err));
 });
 
 module.exports = router;

@@ -6,6 +6,7 @@ const albumSchema = new Schema({
   title: String,
   genre: String,
   year: Number,
+  image: String,
 });
 
 const Album = model("Album", albumSchema);
