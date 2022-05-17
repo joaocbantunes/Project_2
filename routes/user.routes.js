@@ -29,7 +29,7 @@ router.post("/user/wishlist", (req, res, next) => {
 router.get("/user/wishlist", (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
-    //.populate("wishlist")
+    .populate("wishlist")
     .then((user) => {
       console.log(user);
       res.render("profile/wishlist", { user });

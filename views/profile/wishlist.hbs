@@ -8,14 +8,14 @@
   </div>
 </div>
 
-<div class="wishlist">
-  {{#each wishlist}}
-    <p>{{this.artists}}</p>
-  {{/each}}
-</div>
-
 <p></p>
 <button><a href="/album-details/:id">See details</a></button>
 <form action="/user/wishlist/:id" method="post">
   <button type="submit">Add to wishlist</button>
 </form>
+
+<div class="wishlist">
+  {{#each user.wishlist}}
+    <p>{{this.title}}</p>
+  {{/each}}
+</div>
