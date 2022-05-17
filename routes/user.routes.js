@@ -5,7 +5,8 @@ const router = require("express").Router();
 //app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
 router.get("/user", (req, res, next) => {
-  res.render("profile/user");
+  const user = req.session.user;
+  res.render("profile/user", { user });
 });
 
 router.get("/user/collection", (req, res, next) => {
