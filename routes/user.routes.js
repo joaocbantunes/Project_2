@@ -17,4 +17,11 @@ router.get("/user/wishlist", (req, res, next) => {
   res.render("profile/wishlist");
 });
 
+router.post("/user/wishlist", (req, res, next) => {
+  const { name } = req.params;
+  User.create({ wishlist })
+    .then(() => res.redirect("profile/wishlist"))
+    .catch(() => next(err));
+});
+
 module.exports = router;

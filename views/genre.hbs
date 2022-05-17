@@ -1,8 +1,9 @@
-<h1>Genre details</h1>
+<h1>Related {{albumDetails.genres}} albums</h1>
 
 {{#each artistList}}
+  <div class="genres">
+    <img src="{{this.thumb}}" alt="{{this.title}}" />
+    <a href="/album/{{this.title}}" class="albumBtn">{{this.title}}</a>
 
-  <p>{{this.title}}</p>
-  <p></p>
-
+  </div>
 {{/each}}

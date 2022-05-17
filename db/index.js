@@ -7,6 +7,8 @@ const mongoose = require("mongoose");
 
 const MONGO_URI = require("../utils/consts");
 
+const User = "../models/User.model";
+
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
