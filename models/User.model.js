@@ -12,18 +12,18 @@ const userSchema = new Schema({
     type: String,
     default:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png",
-    /*collection: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Album",
-    },
-  ],
-  wishlist: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Album",
-    },
-  ], */
+    collection: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Album",
+      },
+    ],
+    wishlist: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Album",
+      },
+    ],
   },
 });
 
