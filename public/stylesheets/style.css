@@ -1,12 +1,17 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
-  background-image: url(https://i0.wp.com/noize.com.br/wp-content/uploads/2021/11/foto4-3-scaled.jpg?resize=768%2C512&ssl=1);
-  background-size: cover;
+  /* background-image: url(https://i0.wp.com/noize.com.br/wp-content/uploads/2021/11/foto4-3-scaled.jpg?resize=768%2C512&ssl=1);
+  background-size: cover; */
+  background-color: black;
 }
+
+/* .navbar-center {
+  margin-top: 8px;
+} */
 
 a {
   color: #00b7ff;
@@ -14,6 +19,18 @@ a {
 
 h1 {
   color: 15px;
+}
+
+.card {
+  background-color: rgba(255, 0, 0, 0.2);
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 50px;
+  margin: 35px;
 }
 
 /* .navbar {
@@ -24,15 +41,7 @@ h1 {
   width: 100px;
 }
 
-.card {
-  background-color: aqua;
-  width: 250px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-}
+
 
 .card__image {
   width: 150px;

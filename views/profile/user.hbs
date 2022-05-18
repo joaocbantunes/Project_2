@@ -29,6 +29,32 @@
       </div>
     </div>
 
+ {{!--    <div class="container">
+  <div class="form-container">
+    <form action="/artist-search" method="get">
+      <input type="text" name="name" />
+      <button type="submit">Search for an artist</button>
+    </form>
+  </div>
+</div> --}}
+
+
+
+<div class="navbar-center">
+<div class="field has-addons">
+  <div class="control">
+      <form action="/artist-search" method="get">
+    <input class="input" type="text" name="name" placeholder="Find an artist">
+  </div>
+  <div class="control">
+      <button class="button is-primary">
+Search
+      </button>
+   
+    </form>
+  </div>
+</div>
+</div>
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -98,10 +124,10 @@
 
 
 
-<div class="card">
+{{!-- <div class="card">
   <img class="card__image" src="{{user.image}}" alt="user image" />
   <p>User: {{user.username}}</p>
   <div class="card__clicks">
 
   </div>
-</div>
+</div> --}}
