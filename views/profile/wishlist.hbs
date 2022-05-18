@@ -14,7 +14,9 @@
   {{#each user.wishlist}}
     <div class="card">
       <p class="card__artist">{{this.artist}}</p>
-      <p class="card__title">{{this.title}}</p>
+      <a href="/album-details/{{this.apiId}}"><p
+          class="card__title"
+        >{{this.title}}</p></a>
 
       <img
         class="card__image"

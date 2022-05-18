@@ -7,6 +7,7 @@ const albumSchema = new Schema({
   genre: String,
   year: Number,
   image: String,
+  apiId: String,
 });
 
 const Album = model("Album", albumSchema);

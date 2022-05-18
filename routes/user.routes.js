@@ -52,6 +52,7 @@ router.post("/user/wishlist/:id", (req, res, next) => {
         title: album.title,
         image: album.thumb,
         artist: album.artists_sort,
+        apiId: id,
       })
         .then((Album) => {
           User.findByIdAndUpdate(req.session.user._id, {
