@@ -39,6 +39,16 @@ body {
   margin: 35px;
 }
 
+.card-media {
+  display: flex;
+  justify-content: center;
+}
+
+.username {
+  color: antiquewhite;
+  font-size: 24px;
+}
+
 /* .navbar-center {
 .navbar-center {
   margin-top: 8px;
