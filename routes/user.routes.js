@@ -1,12 +1,14 @@
 const axios = require("axios");
 const User = require("../models/User.model");
 const router = require("express").Router();
-
 const Album = require("../models/Album.model");
+
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 //const fileUploader = require("../config/cloudinary.config");
 
-router.get("/user", (req, res, next) => {
+router.get("/user", isLoggedIn, (req, res, next) => {
   res.render("profile/user", { user: req.session.user });
 });
 
@@ -30,7 +32,7 @@ router.post("/user/wishlist", (req, res, next) => {
     .catch(() => next(err));
 });
  */
-router.get("/user/wishlist", (req, res, next) => {
+router.get("/user/wishlist", isLoggedIn, (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
     .populate("wishlist")
@@ -78,7 +80,7 @@ router.post("/user/wishlist/:id/delete", (req, res, next) => {
     .catch(() => next(err));
 });
 
-router.get("/user/collection", (req, res, next) => {
+router.get("/user/collection", isLoggedIn, (req, res, next) => {
   const user = req.session.user;
   User.findById(user._id)
     .populate("collections")
@@ -99,6 +101,7 @@ router.post("/user/collection/:id", (req, res, next) => {
         title: album.title,
         image: album.thumb,
         artist: album.artists_sort,
+        apiId: id,
       })
         .then((Album) => {
           User.findByIdAndUpdate(req.session.user._id, {

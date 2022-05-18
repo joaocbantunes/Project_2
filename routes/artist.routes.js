@@ -1,5 +1,8 @@
 const axios = require("axios");
 const router = require("express").Router();
+
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
 /* 
 router.get("/artist-search", (req, res, next) => {
   discogsAPI
@@ -14,7 +17,7 @@ router.get("/artist-search", (req, res, next) => {
     );
 }); */
 
-router.get("/artist-search", (req, res, next) => {
+router.get("/artist-search", isLoggedIn, (req, res, next) => {
   //console.log(req.body);
   const { name } = req.query;
   axios
@@ -44,7 +47,7 @@ router.get("/artist-search", (req, res, next) => {
   })
   .catch((err) => next(err)); */
 
-router.get("/album/:name", (req, res, next) => {
+router.get("/album/:name", isLoggedIn, (req, res, next) => {
   const { name } = req.params;
   axios
     .get(
@@ -58,7 +61,7 @@ router.get("/album/:name", (req, res, next) => {
     });
 });
 
-router.get("/album-details/:id", (req, res, next) => {
+router.get("/album-details/:id", isLoggedIn, (req, res, next) => {
   //console.log(req.params);
   const { id } = req.params;
   axios
@@ -72,7 +75,7 @@ router.get("/album-details/:id", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get("/genre/:name", (req, res, next) => {
+router.get("/genre/:name", isLoggedIn, (req, res, next) => {
   const { name } = req.params;
   axios
     .get(
