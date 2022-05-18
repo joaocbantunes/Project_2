@@ -9,6 +9,19 @@ body {
   background-color: black;
 }
 
+.imageindex {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  margin-top: 30px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
 /* .navbar-center {
   margin-top: 8px;
 } */
