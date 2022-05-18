@@ -1,34 +1,60 @@
-<nav class="navbar">
-  <img
-    class="navbar__image"
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
-    alt=""
-  />
-  <ul>
-    <li class="navbar__item"><a href="/auth/signup"><button>Sign Up</button></a></li>
-    <li class="navbar__item"><a href="/auth/login"><button>Log in</button></a></li>
-    <li class="navbar__item"><a href="/auth/logout"><button
-        >logout</button></a></li>
-  </ul>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/user">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
+        width="40"
+        height="40"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    {{!-- <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/user/collection">My Collection</a>
+            <a class="navbar-item" href="/user/wishlist">My Wishlist</a>
+      
+      </div> --}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="/auth/signup"><strong
+            >Signup</strong></a>
+            <a class="button is-primary" href="/auth/login"><strong
+            >Login</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<h1>{{appTitle}} 🚀</h1>
+{{!-- <h1>{{appTitle}} 🚀</h1>
 <p>Welcome Ironhacker!</p>
 
 <p>Teste</p>
 
 {{#if user}}
   <a href="/user"><button>Profile</button></a>
-{{else}}
-  <p>a tua mae</p>
+
 
 {{/if}}
+ --}}
 
-<div class="container">
-  <div class="form-container">
-    <form action="/artist-search" method="get">
-      <input type="text" name="name" />
-      <button type="submit">Search for an artist</button>
-    </form>
-  </div>
+<div class="imageindex">
+<img width="600px" src="./images/logo-index.png" alt="index-image" srcset="">
 </div>

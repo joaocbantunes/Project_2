@@ -14,9 +14,8 @@
   {{#each user.collections}}
     <p>Artist: {{this.artist}}</p>
 
-    <a href="/album-details/{{this.apiId}}"><p
-        class="card__title"
-      >{{this.title}}</p></a>
+    <a href="/album-details/{{this.apiId}}"><p class="card__title">Album:
+        {{this.title}}</p></a>
 
     <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/collection/{{_id}}/delete" method="post">

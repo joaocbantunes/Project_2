@@ -1,4 +1,4 @@
-<form action="/auth/login" method="POST">
+{{!-- <form action="/auth/login" method="POST">
   <label>
     Username
     <input type="text" name="username" />
@@ -10,6 +10,85 @@
 
   {{!  <button type="submit">Submit</button> }}
   <a href="profile/user"><button type="submit">Submit</button></a>
+</form>
+
+{{#if errorMessage}}
+  {{errorMessage}}
+{{/if}} --}}
+
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/user">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
+        width="40"
+        height="40"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    {{!-- <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/user/collection">My Collection</a>
+            <a class="navbar-item" href="/user/wishlist">My Wishlist</a>
+      
+      </div> --}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="/"><strong
+            >Back to homepage</strong></a>
+            <a class="button is-primary" href="/auth/login"><strong
+            >Login</strong></a>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<form action="/auth/login" method="POST">
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="text" name="username" placeholder="Username" />
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="password" name="password" placeholder="Password" />
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field has-addons has-addons-centered">
+    <p class="control">
+      <a href="profile/user"><button class="button is-success">
+          Login
+        </button></a>
+    </p>
+  </div>
 </form>
 
 {{#if errorMessage}}
