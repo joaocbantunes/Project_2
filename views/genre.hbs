@@ -1,7 +1,54 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
+        width="40"
+        height="40"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    {{!-- <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/user/collection">My Collection</a>
+            <a class="navbar-item" href="/user/wishlist">My Wishlist</a>
+      
+      </div> --}}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="/user"><strong
+            >Back to profile</strong></a>
+            <a class="button is-primary" href="/auth/logout"><strong
+            >Logout</strong></a>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <h1>Related {{albumDetails.genres}} albums</h1>
 
 {{#each artistList}}
   <div class="genres">
+    
     <img src="{{this.thumb}}" alt="{{this.title}}" />
     <a href="/album/{{this.title}}" class="albumBtn">{{this.title}}</a>
 
