@@ -17,6 +17,13 @@
 
 <p>Teste</p>
 
+{{#if user}}
+  <a href="/user"><button>Profile</button></a>
+{{else}}
+  <p>a tua mae</p>
+
+{{/if}}
+
 <div class="container">
   <div class="form-container">
     <form action="/artist-search" method="get">
