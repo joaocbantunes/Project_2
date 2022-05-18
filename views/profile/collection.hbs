@@ -18,7 +18,8 @@
   {{#each user.collections}}
     <p>{{this.artists}}</p>
     <p>{{this.title}}</p>
-    <p>{{this.thumb}}</p>
+
+    <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/collection/{{_id}}/delete" method="post">
       <button type="submit">Delete from collection</button>
     </form>
