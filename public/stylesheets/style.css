@@ -1,5 +1,11 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -90,3 +96,25 @@ h1 {
   width: 100px;
   margin: 5px;
 } */
+
+.search-card {
+  background-color: rgba(239, 239, 239, 0.2);
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  margin: 35px;
+  border: 2px solid aquamarine;
+  transition-duration: 0.2s;
+}
+
+.search-card:hover {
+  background-color: rgba(239, 239, 239, 0.416);
+}
+
+.search-card-button {
+  color: antiquewhite;
+}
