@@ -1,11 +1,107 @@
-<h1>Welcome, {{user.username}} this is your profile page</h1>
-<a href="/auth/logout"><button>Logout</button></a>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/user">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
+        width="40"
+        height="40"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/user/collection">My Collection</a>
+            <a class="navbar-item" href="/user/wishlist">My Wishlist</a>
+      
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        
+          <a class="button is-primary" href="/auth/logout"><strong
+            >Logout</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="card">
+  
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{user.image}}" alt="user image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{user.username}}</p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+{{!-- <div class="card">
+  
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{user.image}}" alt="user image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{user.username}}</p>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<div class="card">
+  
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{user.image}}" alt="user image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{user.username}}</p>
+      </div>
+    </div>
+
+    
+  </div>
+</div> --}}
+
+
+
 
 <div class="card">
   <img class="card__image" src="{{user.image}}" alt="user image" />
   <p>User: {{user.username}}</p>
   <div class="card__clicks">
-    <a href="/user/collection"><button class="card__button">My Collection</button></a>
-    <a href="/user/wishlist"><button class="card__button">My Wishlist</button></a>
+
   </div>
 </div>
