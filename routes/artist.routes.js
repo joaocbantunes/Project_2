@@ -55,7 +55,7 @@ router.get("/album/:name", isLoggedIn, (req, res, next) => {
     )
     .then((response) => {
       response.data.results.forEach((element) => {
-        //console.log(element.title);
+        console.log(element);
       });
       res.render("album", { artistList: response.data.results });
     });

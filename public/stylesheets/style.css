@@ -15,6 +15,11 @@ body {
   background-color: black;
 }
 
+.page-title {
+  color: antiquewhite;
+  font-size: 3rem;
+  text-align: center;
+}
 .imageindex {
   margin-top: 0px;
   display: flex;
@@ -117,4 +122,40 @@ h1 {
 
 .search-card-button {
   color: antiquewhite;
+}
+
+.search-card-album {
+  background-color: rgba(239, 239, 239, 0.2);
+  width: 250px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+  margin: 35px;
+  border: 2px solid aquamarine;
+  transition-duration: 0.2s;
+  /* text-decoration: none; */
+  color: antiquewhite;
+}
+
+.search-card-album:hover {
+  background-color: rgba(239, 239, 239, 0.416);
+}
+
+.album-result {
+  display: inline-grid;
+
+  margin-left: 9vw;
+}
+
+.album-title-link {
+  color: pink;
+  cursor: pointer;
+  text-decoration: none;
+  width: 15vw;
+  text-align: center;
+  height: 8vh;
+  padding: 1%;
 }

@@ -43,12 +43,13 @@ router.get("/user/wishlist", isLoggedIn, (req, res, next) => {
 
 router.post("/user/wishlist/:id", (req, res, next) => {
   const { id } = req.params;
+
   axios
     .get(
       `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
-      console.log(response.data);
+      console.log("added to wishlist", response.data);
       const album = response.data;
       Album.create({
         title: album.title,

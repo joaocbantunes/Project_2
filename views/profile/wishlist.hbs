@@ -1,6 +1,6 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href="/user">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
         width="40"
@@ -56,13 +56,12 @@
 
 <p></p>
 
-<div>
+
   {{#each user.wishlist}}
-    <div class="card">
+    <div class="album-result">
+      <div class="search-card-album">
       <p class="card__artist">{{this.artist}}</p>
-      <a href="/album-details/{{this.apiId}}"><p
-          class="card__title"
-        >{{this.title}}</p></a>
+      <a class="album-title-link" href="/album-details/{{this.apiId}}">{{this.title}}</a>
 
       <img
         class="card__image"
@@ -70,9 +69,9 @@
         alt="cover {{this.title}}"
       />
       <form action="/user/wishlist/{{_id}}/delete" method="POST">
-        <button class="card__button" type="submit">Delete from wishlist</button>
+        <button class="button is-danger"  type="submit">Delete from wishlist</button>
       </form>
+    </div>
     </div>
   {{/each}}
 
-</div>

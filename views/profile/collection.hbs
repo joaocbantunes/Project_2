@@ -1,6 +1,6 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href="/user">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Disque_Vinyl.svg/1024px-Disque_Vinyl.svg.png"
         width="40"
@@ -44,29 +44,65 @@
   </div>
 </nav>
 
-<h1>Collection List</h1>
-<div class="container">
-  <div class="form-container">
-    <form action="/artist-search" method="get">
-      <input type="text" name="name" />
-      <button type="submit">Search for an artist</button>
-    </form>
-  </div>
-</div>
 
-<p></p>
+
+<h1 class="page-title">{{user.username}}'s Collection</h1>
 
 <div class="collections">
   {{#each user.collections}}
+  <div class="album-result">
+    <div class="search-card-album">
     <p>Artist: {{this.artist}}</p>
 
-    <a href="/album-details/{{this.apiId}}"><p class="card__title">Album:
-        {{this.title}}</p></a>
+    <a  class="album-title-link" href="/album-details/{{this.apiId}}">Album:
+        {{this.title}}</a>
 
     <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/collection/{{_id}}/delete" method="post">
-      <button type="submit">Delete from collection</button>
+      <button class="button is-danger" type="submit">Delete from collection</button>
     </form>
+    </div>
+    </div>
   {{/each}}
 
+</div>
+
+<div class="search-form">
+<div class="user-card">
+
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{user.image}}" alt="user image">
+        </figure>
+      </div>
+      {{#if user.collections}}
+      <div class="media-content">
+        <p class="username">Continue Searching</p>
+      </div>
+      {{else}}
+      <div class="media-content">
+        <p class="username">Start adding to your collections</p>
+      </div>
+      {{/if}}
+      
+    </div>
+  
+  <div class="navbar-center">
+<div class="field has-addons">
+  <div class="control">
+      <form action="/artist-search" method="get">
+    <input class="input" type="text" name="name" placeholder="Find an artist">
+  </div>
+  <div class="control">
+      <button class="button is-primary">
+Search
+      </button>
+   
+    </form>
+  </div>
+</div>
+</div>
+</div>
 </div>
