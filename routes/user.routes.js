@@ -10,13 +10,18 @@ router.get("/user", (req, res, next) => {
   res.render("profile/user", { user: req.session.user });
 });
 
-router.get("/user/collection", (req, res, next) => {
+/* router.get("/user/collection", (req, res, next) => {
   res.render("profile/collection");
-});
+}); */
 
 router.get("/profile/wishlist", (req, res, next) => {
   res.render("profile/wishlist");
 });
+
+router.get("/profile/collection", (req, res, next) => {
+  res.render("profile/collection");
+});
+
 /*
 router.post("/user/wishlist", (req, res, next) => {
   const { name } = req.params;
@@ -60,10 +65,19 @@ router.post("/user/wishlist/:id", (req, res, next) => {
 });
 
 router.post("/user/wishlist/:id/delete", (req, res, next) => {
-  const { id } = req.params;
-  User.findByIdAndRemove(id)
+  //const { id } = req.params;
+  User.findByIdAndDelete(req.params.id)
     .then(() => res.redirect("/user/wishlist"))
     .catch(() => next(err));
+});
+
+router.get("/user/collection", (req, res, next) => {
+  const user = req.session.user;
+  User.findById(user._id)
+    .populate("collections")
+    .then((user) => {
+      res.render("profile/collection", { user });
+    });
 });
 
 router.post("/user/collection/:id", (req, res, next) => {

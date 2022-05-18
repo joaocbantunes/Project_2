@@ -19,7 +19,7 @@
     <p>{{this.artists}}</p>
     <p>{{this.title}}</p>
     <p>{{this.thumb}}</p>
-    <form action="/user/wishlist/{{this.id}}/delete" method="post">
+    <form action="/user/wishlist/{{_id}}/delete" method="POST">
       <button type="submit">Delete from wishlist</button>
     </form>
   {{/each}}
