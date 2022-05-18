@@ -96,8 +96,8 @@ router.post("/user/collection/:id", (req, res, next) => {
       const album = response.data;
       Album.create({
         title: album.title,
-        image: album.image,
-        artist: album.artist,
+        image: album.thumb,
+        artist: album.artists_sort,
       })
         .then((Album) => {
           User.findByIdAndUpdate(req.session.user._id, {
@@ -109,13 +109,18 @@ router.post("/user/collection/:id", (req, res, next) => {
         })
         .catch((err) => next(err));
     });
-});
 
-router.post("/user/collection/:id/delete", (req, res, next) => {
-  const { id } = req.params;
-  User.findByIdAndRemove(id)
-    .then(() => res.redirect("/user/collection"))
-    .catch(() => next(err));
+  router.post("/user/collection/:id/delete", (req, res, next) => {
+    const { id } = req.params;
+    User.findByIdAndUpdate(req.session.user._id, {
+      $pull: { collections: id },
+    })
+      .then(() => {
+        return Album.findByIdAndDelete(req.params.id);
+      })
+      .then(() => res.redirect("/user/collection"))
+      .catch(() => next(err));
+  });
 });
 
 module.exports = router;
