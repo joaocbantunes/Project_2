@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -11,7 +13,7 @@ h1 {
   color: 15px;
 }
 
-.navbar {
+/* .navbar {
   display: flex;
 }
 
@@ -44,4 +46,4 @@ h1 {
   border-radius: 5px;
   width: 100px;
   margin: 5px;
-}
+} */

@@ -14,15 +14,21 @@
   <button type="submit">Add to wishlist</button>
 </form>
 
-<div class="wishlist">
+<div>
   {{#each user.wishlist}}
-    <p>{{this.artist}}</p>
-    <p>{{this.title}}</p>
+    <div class="card">
+      <p class="card__artist">{{this.artist}}</p>
+      <p class="card__title">{{this.title}}</p>
 
-    <img src="{{this.image}}" alt="cover {{this.title}}" />
-    <form action="/user/wishlist/{{_id}}/delete" method="POST">
-      <button type="submit">Delete from wishlist</button>
-    </form>
+      <img
+        class="card__image"
+        src="{{this.image}}"
+        alt="cover {{this.title}}"
+      />
+      <form action="/user/wishlist/{{_id}}/delete" method="POST">
+        <button class="card__button" type="submit">Delete from wishlist</button>
+      </form>
+    </div>
   {{/each}}
 
 </div>

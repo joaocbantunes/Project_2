@@ -39,8 +39,6 @@ router.post(
       });
     }
 
-    //this 'if' bellow was added by Joao Morgado. blame him if it brakes the code
-
     //   ! This use case is using a regular expression to control for special characters and min length
     /*
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
