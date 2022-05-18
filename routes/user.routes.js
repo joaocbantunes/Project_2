@@ -46,11 +46,12 @@ router.post("/user/wishlist/:id", (req, res, next) => {
       `https://api.discogs.com/releases/${id}?key=${process.env.CLIENT_KEY}&secret=${process.env.CLIENT_SECRET}`
     )
     .then((response) => {
+      console.log(response.data);
       const album = response.data;
       Album.create({
         title: album.title,
-        image: album.image,
-        artist: album.artist,
+        image: album.thumb,
+        artist: album.artists_sort,
       })
         .then((Album) => {
           User.findByIdAndUpdate(req.session.user._id, {
@@ -65,8 +66,13 @@ router.post("/user/wishlist/:id", (req, res, next) => {
 });
 
 router.post("/user/wishlist/:id/delete", (req, res, next) => {
-  //const { id } = req.params;
-  User.findByIdAndDelete(req.params.id)
+  const { id } = req.params;
+  User.findByIdAndUpdate(req.session.user._id, {
+    $pull: { wishlist: id },
+  })
+    .then(() => {
+      return Album.findByIdAndDelete(req.params.id);
+    })
     .then(() => res.redirect("/user/wishlist"))
     .catch(() => next(err));
 });

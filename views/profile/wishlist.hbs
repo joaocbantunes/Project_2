@@ -16,9 +16,10 @@
 
 <div class="wishlist">
   {{#each user.wishlist}}
-    <p>{{this.artists}}</p>
+    <p>{{this.artist}}</p>
     <p>{{this.title}}</p>
-    <p>{{this.thumb}}</p>
+
+    <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/wishlist/{{_id}}/delete" method="POST">
       <button type="submit">Delete from wishlist</button>
     </form>
