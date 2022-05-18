@@ -1,7 +1,11 @@
 <h1>Welcome, {{user.username}} this is your profile page</h1>
 <a href="/auth/logout"><button>Logout</button></a>
 
-<a href="/user/collection"><button>My Collection</button></a>
-<a href="/user/wishlist"><button>My Wishlist</button></a>
-
-<img src="{{user.image}}" alt="user image" />
+<div class="card">
+  <img class="card__image" src="{{user.image}}" alt="user image" />
+  <p>User: {{user.username}}</p>
+  <div class="card__clicks">
+    <a href="/user/collection"><button class="card__button">My Collection</button></a>
+    <a href="/user/wishlist"><button class="card__button">My Wishlist</button></a>
+  </div>
+</div>
