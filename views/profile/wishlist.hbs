@@ -9,15 +9,11 @@
 </div>
 
 <p></p>
-<button><a href="/album-details/:id">See details</a></button>
-<form action="/user/wishlist/:id" method="post">
-  <button type="submit">Add to wishlist</button>
-</form>
 
 <div class="wishlist">
   {{#each user.wishlist}}
-    <p>{{this.artist}}</p>
-    <p>{{this.title}}</p>
+    <p>Artist: {{this.artist}}</p>
+    <p>Album: {{this.title}}</p>
 
     <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/wishlist/{{_id}}/delete" method="POST">
