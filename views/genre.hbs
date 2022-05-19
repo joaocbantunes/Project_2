@@ -47,6 +47,28 @@
 <h1>Related {{albumDetails.genres}} albums</h1>
 
 {{#each artistList}}
+    <div class="album-result">
+      <div class="search-card-album">
+      <p class="card__artist">{{this.artist}}</p>
+      <a class="album-title-link" href="/album-details/{{this.id}}">{{this.title}}</a>
+
+<img src="{{this.thumb}}" alt="{{this.title}}" />
+    {{!-- <a href="/album{{this.title}}" class="albumBtn">{{this.title}}</a> --}}
+
+
+      {{!-- <img
+        class="card__image"
+        src="{{this.image}}"
+        alt="cover {{this.title}}"
+      /> --}}
+      
+    </div>
+    </div>
+  {{/each}}
+
+
+
+{{#each artistList}}
   <div class="genres">
     
     <img src="{{this.thumb}}" alt="{{this.title}}" />

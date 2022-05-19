@@ -21,12 +21,12 @@
     </a>
   </div>
 
-    {{!-- <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item" href="/user/collection">My Collection</a>
             <a class="navbar-item" href="/user/wishlist">My Wishlist</a>
       
-      </div> --}}
+      </div>
     </div>
 
     <div class="navbar-end">
@@ -75,3 +75,42 @@
     </div>
   {{/each}}
 
+<div class="search-form">
+<div class="user-card">
+
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="{{user.image}}" alt="user image">
+        </figure>
+      </div>
+      {{#if user.collections}}
+      <div class="media-content">
+        <p class="username">Continue Searching</p>
+      </div>
+      {{else}}
+      <div class="media-content">
+        <p class="username">Start adding to your Wishlist</p>
+      </div>
+      {{/if}}
+      
+    </div>
+  
+  <div class="navbar-center">
+<div class="field has-addons">
+  <div class="control">
+      <form action="/artist-search" method="get">
+    <input class="input" type="text" name="name" placeholder="Find an artist">
+  </div>
+  <div class="control">
+      <button class="button is-primary">
+Search
+      </button>
+   
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
