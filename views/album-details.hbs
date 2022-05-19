@@ -44,11 +44,49 @@
   </div>
 </nav>
 
+
+ 
+  <div class="search-form">
+    <div class="search-card-albumdetails">
+      <p>Artist: {{#each albumDetails.artists}} {{name}} 
+            {{/each}}</p>
+    <p>Year: {{albumDetails.year}}</p>
+    <p>Title: {{albumDetails.title}}</p> 
+    
+    <p>Tracklist</p>
+    
+    <ol>
+    {{#each albumDetails.tracklist}}
+
+    <li> {{title}}</li>
+
+    {{/each}}
+    </ol>
+    <div class="genre">
+    <p>Genre:
+    
+    <a href="/genre/{{albumDetails.genres}}"> {{albumDetails.genres}}</a>
+    </p>
+</div>
+    <div class="gallery">
+    {{#each albumDetails.images}}
+    <img src="{{uri}}" alt="" />
+    {{/each}}
+    </div>
+  
+   
+  </div>
+{{!--   <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer> --}}
+{{!-- </div>
 {{#each albumDetails.artists}}
   <h1> {{name}} </h1>
-{{/each}}
+{{/each}} --}}
 
-<div class="album-details">
+{{!-- <div class="album-details">
   <ol>
     <p>Tracklist</p>
     {{#each albumDetails.tracklist}}
@@ -72,4 +110,4 @@
   {{/each}}
   </div>
 
-</div>
+</div> --}}
