@@ -27,17 +27,17 @@
       />
     </a>
 
-    <a
+{{!--     <a
       role="button"
       class="navbar-burger"
       aria-label="menu"
+      data-target="navMenu"
       aria-expanded="false"
-      data-target="navbarBasicExample"
-    >
+     >
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
-    </a>
+    </a> --}}
   </div>
 
     {{!-- <div id="navbarBasicExample" class="navbar-menu">
@@ -61,6 +61,7 @@
       </div>
     </div>
   </div>
+  
 </nav>
 
 <form action="/auth/signup" method="POST">
@@ -95,3 +96,4 @@
 {{#if errorMessage}}
   {{errorMessage}}
 {{/if}}
+
