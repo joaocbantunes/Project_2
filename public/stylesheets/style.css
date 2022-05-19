@@ -7,7 +7,7 @@
 }
 
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* 
   background-image: url(https://i0.wp.com/noize.com.br/wp-content/uploads/2021/11/foto4-3-scaled.jpg?resize=768%2C512&ssl=1);
@@ -21,14 +21,18 @@ body {
   text-align: center;
 }
 .imageindex {
-  display: flex;
   background-image: url(https://res.cloudinary.com/joaocbantunes/image/upload/v1652954904/project-vinyl/background_gxfu5q.jpg);
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-  /*   margin-top: 0px;
-  display: flex;
-  justify-content: center; */
+  height: 90vh;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  .imageindex {
+    height: 50vh;
+    background-size: cover;
+  }
 }
 
 .field {
