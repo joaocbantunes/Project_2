@@ -64,7 +64,7 @@
   
 </nav>
 
-<form action="/auth/signup" method="POST">
+<form action="/auth/signup" method="POST" enctype="multipart/form-data">
   <div class="field">
     <p class="control has-icons-left">
       <input class="input" type="text" name="username" placeholder="Username" />
@@ -84,6 +84,15 @@
       </span>
     </p>
   </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="file" name="user-image" />
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+
   <div class="field has-addons has-addons-centered">
     <p class="control">
       <a href="profile/user"><button class="button is-success">
