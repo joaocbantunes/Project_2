@@ -21,11 +21,12 @@ body {
   text-align: center;
 }
 .imageindex {
-  display: flex;
+  /* display: flex; */
   background-image: url(https://res.cloudinary.com/joaocbantunes/image/upload/v1652954904/project-vinyl/background_gxfu5q.jpg);
-  height: 100vh;
   width: 100vw;
-  background-size: cover;
+  height: 100vh;
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
   /*   margin-top: 0px;
   display: flex;
   justify-content: center; */
