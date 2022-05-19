@@ -60,10 +60,9 @@
   {{#each user.collections}}
   <div class="album-result">
     <div class="search-card-album">
-    <p>Artist: {{this.artist}}</p>
+    <p>{{this.artist}}</p>
 
-    <a  class="album-title-link" href="/album-details/{{this.apiId}}">Album:
-        {{this.title}}</a>
+    <a  class="album-title-link" href="/album-details/{{this.apiId}}">{{this.title}}</a>
 
     <img src="{{this.image}}" alt="cover {{this.title}}" />
     <form action="/user/collection/{{_id}}/delete" method="post">
